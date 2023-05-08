@@ -1,9 +1,0 @@
-Package: log4eda
-Version: 0.1
-Architecture: all
-Essential: no
-Priority:
-Depends: bash
-Maintainer: Ian Kennedy
-Description: process that reads stdout and stderr and massages the
- stream per a EDA tool log transformer

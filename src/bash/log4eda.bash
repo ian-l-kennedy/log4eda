@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-export log4eda=/usr/bin/log4eda_
-source ${log4eda}/log4eda_util.bash
+source ${GNASH}
 declare -A params
-parse_params params "${#}" "${@}"
+gnash_parse_params params "${#}" "${@}"
 # echo "log4eda: Command Line Parameters Count:"
 # echo "  '${#}'"
 # echo "log4eda: Command Line Parameters:"
@@ -10,9 +9,9 @@ parse_params params "${#}" "${@}"
 # echo "log4eda: Command Line Parameters Dictionary:"
 # echo_dictionary params
 
-param_empty_check params
-param_required_check params output_log
-param_required_check params tool
+gnash_dict_empty_check params
+gnash_dict_required_check params output_log
+gnash_dict_required_check params tool
 
 olog=${params[output_log]}
 edatool=${params[tool]}
@@ -27,11 +26,9 @@ fi
 touch $olog || (echo "ERROR: cannot write to log file: $olog, please check \
 command line parameters" && exit 1)
 
-loggers=${log4eda}/loggers
-
 case $edatool in
   diamond)
-    source ${loggers}/diamond.bash
+    source ${LOG4EDA}/logger_diamond.bash
     logger $olog
     result=$?
     ;;

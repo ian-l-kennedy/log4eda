@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+fn=/etc/profile.d/log4eda.sh
+if [[ -f ${fn} ]] ; then
+  rm ${fn}
+fi
+unset LOG4EDA

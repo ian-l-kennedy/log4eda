@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+fn=/etc/profile.d/log4eda.sh
+if [[ -f ${fn} ]] ; then
+  rm ${fn}
+fi
+
+touch ${fn}
+
+echo "export LOG4EDA=/usr/lib/log4eda" >> ${fn}
+

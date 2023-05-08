@@ -1,0 +1,8 @@
+Package: log4eda
+Version: 0.3
+Architecture: all
+Essential: no
+Priority:
+Depends: bash, gnash
+Maintainer: Ian Kennedy
+Description: reads stdout and stderr and messages the stream per a EDA tool log transformer
